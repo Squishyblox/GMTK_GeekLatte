@@ -8,20 +8,11 @@ public class Cube : MonoBehaviour
     [SerializeField] private float unstickTime = 2f;
 
     private bool canStick = true;
-	private float speed = 10;
 
     private void Start()
     {
         canStick = true;
     }
-
-	void Update() 
-	{
-		//super dirty. Will delete it later
-		float hori = Input.GetAxisRaw("Horizontal");
-		float ver = Input.GetAxisRaw("Vertical");
-		GetComponent<Rigidbody2D>().AddForce(new Vector2(hori, ver)* speed * Time.deltaTime, ForceMode2D.Impulse);	
-	}
 
     protected virtual IEnumerator PartialStick(Rigidbody2D rb, Collision2D collision)
     {
