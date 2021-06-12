@@ -7,7 +7,7 @@ public abstract class Cube : MonoBehaviour
     [SerializeField] private float stickTimer;
 
     protected void PartialStick(float stickTime) {}
-    protected void ActivateAbility() {}
+    protected virtual void ActivateAbility() {}
 
 	private void OnCollisionEnter(Collision collision)
 	{
