@@ -9,7 +9,8 @@ public class Cube : MonoBehaviour
 	
 	private Timer stickTimer;
 	private Timer unstickTimer;
-	private bool canStick;
+	private bool canStick = true;
+	private float timePassed;
 
 	private void Awake()
 	{
@@ -17,32 +18,43 @@ public class Cube : MonoBehaviour
 		stickTimer = Timer.CreateComponent(gameObject, "Stick Time", stickTime);
 	}
 
-	private void Update()
+	private void Start()
 	{
-		if (unstickTimer.TimerFinished)
-		{
-			canStick = true;
-			Debug.Log("Unstick");
-		}
-
-		if (stickTimer.TimerFinished)
-			unstickTimer.StartTimer();
+		canStick = true;
 	}
 
-	protected virtual void PartialStick(float stickTime) {
-		if (canStick)
-		{
-			Debug.Log("Stick!");
-			stickTimer.StartTimer();
-			canStick = false;
-		}
+	protected virtual IEnumerator PartialStick(Rigidbody rb) {
+		Stick(rb);
+		yield return new WaitForSeconds(stickTime);
+		Unstick(rb);
+		yield return new WaitForSeconds(unstickTime);
+		yield return 0;
 	}
 
     protected virtual void ActivateAbility() {}
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag== "Cube")
-			PartialStick(stickTime);
+		if (canStick && collision.gameObject.tag == "Cube") {
+			Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+			StartCoroutine(PartialStick(rb));
+		}
+	}
+
+	private void Stick(Rigidbody rb)
+	{
+		Debug.Log("Stick!");
+		rb.transform.parent = Player.Instance.transform;
+		Debug.Log(rb.transform.parent.name);
+		rb.constraints = RigidbodyConstraints.FreezeAll;
+		canStick = false;
+	}
+
+	private void Unstick(Rigidbody rb)
+	{
+		Debug.Log("Unstick");
+		rb.transform.parent = null;
+		rb.constraints = RigidbodyConstraints.None;
+		canStick = true;
 	}
 }
