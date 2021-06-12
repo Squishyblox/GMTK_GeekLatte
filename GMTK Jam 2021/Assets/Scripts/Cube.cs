@@ -4,8 +4,13 @@ using UnityEngine;
 
 public abstract class Cube : MonoBehaviour
 {
-    private float stickTimer;
+    [SerializeField] private float stickTimer;
 
-    protected void PartialStick() {}
+    protected void PartialStick(float stickTime) {}
     protected void ActivateAbility() {}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		PartialStick(stickTimer);
+	}
 }
