@@ -23,8 +23,8 @@ public class Cube : MonoBehaviour
 		canStick = true;
 	}
 
-	protected virtual IEnumerator PartialStick(Rigidbody rb) {
-		Stick(rb);
+	protected virtual IEnumerator PartialStick(Rigidbody rb, Collision collision) {
+		Stick(rb, collision);
 		yield return new WaitForSeconds(stickTime);
 		Unstick(rb);
 		yield return new WaitForSeconds(unstickTime);
@@ -37,24 +37,34 @@ public class Cube : MonoBehaviour
 	{
 		if (canStick && collision.gameObject.tag == "Cube") {
 			Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-			StartCoroutine(PartialStick(rb));
+			StartCoroutine(PartialStick(rb, collision));
 		}
 	}
 
-	private void Stick(Rigidbody rb)
+	private void Stick(Rigidbody rb, Collision collision)
 	{
 		Debug.Log("Stick!");
-		rb.transform.parent = Player.Instance.transform;
-		Debug.Log(rb.transform.parent.name);
-		rb.constraints = RigidbodyConstraints.FreezeAll;
+
+		// creates joint
+		FixedJoint joint = gameObject.AddComponent<FixedJoint>();
+		// sets joint position to point of contact
+		joint.anchor = collision.contacts[0].point;
+		// conects the joint to the other object
+		joint.connectedBody = collision.contacts[0].otherCollider.transform.GetComponentInParent<Rigidbody>();
+		// Stops objects from continuing to collide and creating more joints
+		joint.enableCollision = false;
+
+		//rb.transform.parent = Player.Instance.transform;
+		//Debug.Log(rb.transform.parent.name);
+		//rb.constraints = RigidbodyConstraints.FreezeAll;
 		canStick = false;
 	}
 
 	private void Unstick(Rigidbody rb)
 	{
 		Debug.Log("Unstick");
-		rb.transform.parent = null;
-		rb.constraints = RigidbodyConstraints.None;
+		//rb.transform.parent = null;
+		//rb.constraints = RigidbodyConstraints.None;
 		canStick = true;
 	}
 }
