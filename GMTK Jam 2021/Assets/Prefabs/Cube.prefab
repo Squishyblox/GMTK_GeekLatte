@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 457448814273821303}
   - component: {fileID: 4018936898980368295}
   - component: {fileID: 3531794251611129149}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 7384218142572278602}
   - component: {fileID: 8029779155213203260}
   - component: {fileID: -6508373651166804867}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,3 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickTime: 5
+  unstickTime: 5
