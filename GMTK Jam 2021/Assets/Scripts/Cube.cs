@@ -20,6 +20,7 @@ public class Cube : MonoBehaviour
         yield return new WaitForSeconds(stickTime);
         Unstick(rb);
         yield return new WaitForSeconds(unstickTime);
+        canStick = true;
         yield return 0;
     }
 
@@ -51,8 +52,6 @@ public class Cube : MonoBehaviour
     private void Unstick(Rigidbody2D rb)
     {
         Debug.Log("Unstick");
-        //rb.transform.parent = null;
-        //rb.constraints = RigidbodyConstraints.None;
-        canStick = true;
+        Destroy(GetComponent<FixedJoint2D>());
     }
 }
