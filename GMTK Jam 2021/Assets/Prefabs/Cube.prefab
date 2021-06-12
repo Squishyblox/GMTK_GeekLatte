@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickTime: 5
-  unstickTime: 5
+  unstickTime: 2
