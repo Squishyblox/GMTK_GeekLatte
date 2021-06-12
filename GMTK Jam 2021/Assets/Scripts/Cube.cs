@@ -2,15 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Cube : MonoBehaviour
+public class Cube : MonoBehaviour
 {
-    [SerializeField] private float stickTimer;
+    [SerializeField] private float stickTime = 5f;
+	private Timer stickTimer;
 
-    protected void PartialStick(float stickTime) {}
+	private void Awake()
+	{
+		stickTimer = Timer.CreateComponent(gameObject, "Stick Time", stickTime);
+	}
+
+	private void Update()
+	{
+		if (stickTimer.TimerFinished)
+		{
+			Debug.Log("Unstick");
+		}
+	}
+
+	protected virtual void PartialStick(float stickTime) {
+		Debug.Log("Stick!");
+		stickTimer.StartTimer();
+	}
     protected virtual void ActivateAbility() {}
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		PartialStick(stickTimer);
+		PartialStick(stickTime);
 	}
 }
