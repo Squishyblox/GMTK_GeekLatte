@@ -90,6 +90,8 @@ public class H_Hook : Cube
             case State.GrappleStart:
                 if (Input.GetMouseButtonUp(0))
                     currentState = State.IsGrappling;
+                else if (Input.GetMouseButtonDown(1))
+                    StopGrapple();
                 break;
 			default:
 				break;
