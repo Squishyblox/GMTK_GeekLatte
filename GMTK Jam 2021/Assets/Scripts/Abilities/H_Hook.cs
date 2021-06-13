@@ -77,7 +77,11 @@ public class H_Hook : Cube
     protected override void Update()
 	{
         base.Update();
-		switch (currentState)
+
+        if (!leader)
+            return;
+
+        switch (currentState)
 		{
 			case State.Normal:
                 if (Input.GetMouseButtonDown(0))
@@ -97,8 +101,6 @@ public class H_Hook : Cube
     /// </summary>
 	private void StartGrapple()
 	{
-        if (!isConnnectedToEntity)
-            return;
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, grappableLayerMask))
