@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public List<E_Entity> entities;
     public E_Entity currentEntity;
 
+    public E_Entity startEntity;
+
     private void Awake() 
     {
         if(instance == null)
@@ -28,8 +30,8 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
-        //set current entity
-        //let cam follow    
+        currentEntity = startEntity;
+        currentEntity.isPlayerControlling = true;
     }
 
     public void SwitchEntity()
