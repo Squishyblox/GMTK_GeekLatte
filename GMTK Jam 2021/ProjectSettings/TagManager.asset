@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cube
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Cube
   - Water
   - UI
   - 
@@ -36,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ceiling
   m_SortingLayers:
   - name: Default
     uniqueID: 0
