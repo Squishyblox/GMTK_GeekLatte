@@ -24,7 +24,7 @@ public class R_Rebound : Cube
 				else
 				{
 					rigidbody2d.velocity = new Vector2(-10f, 10f);
-					Debug.Log(rigidbody2d.velocity);
+					//Debug.Log(rigidbody2d.velocity);
 				}
 			}
 		}

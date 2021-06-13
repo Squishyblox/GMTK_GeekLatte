@@ -11,8 +11,8 @@ public class CameraSwitching : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 cameraTargetPosition;
     private bool lookAtOriginal;
-    [Range(0, 1)]
-    public float speed;
+    //[Range(0, 1)]
+    public float speed = 10;
 
     private void Start() 
     {
@@ -25,7 +25,7 @@ public class CameraSwitching : MonoBehaviour
         */
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(GameManager.instance.currentEntity == null)
             return;
