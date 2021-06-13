@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1911738983}
   - component: {fileID: 1911738982}
   - component: {fileID: 1911738981}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
