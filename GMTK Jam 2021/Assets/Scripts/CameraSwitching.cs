@@ -25,7 +25,7 @@ public class CameraSwitching : MonoBehaviour
 
     private void Update() 
     {
-        this.transform.LookAt(Vector3.LerpUnclamped(this.transform.position - cameraOffset, targetPosition, speed * 0.08f * Time.deltaTime));
+        this.transform.LookAt(Vector3.LerpUnclamped(this.transform.position - cameraOffset + cameraLookAtOffset, targetPosition, speed * Time.deltaTime));
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, cameraTargetPosition, speed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Tab))
         {
