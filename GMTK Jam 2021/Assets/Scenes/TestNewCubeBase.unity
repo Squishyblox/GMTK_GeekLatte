@@ -1177,7 +1177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4666653110631704343, guid: fe0a08d2ddbba3d48bd82bde142f6330, type: 3}
       propertyPath: reboundForce
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5271358313973042456, guid: fe0a08d2ddbba3d48bd82bde142f6330, type: 3}
       propertyPath: m_Name

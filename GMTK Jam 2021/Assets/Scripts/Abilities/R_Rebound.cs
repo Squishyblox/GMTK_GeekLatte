@@ -17,7 +17,13 @@ public class R_Rebound : Cube
 		base.OnCollisionEnter2D(collision);
 		if (collision.gameObject.layer == 30)
 		{
-			rigidbody2d.AddForce(new Vector2(-1, 1) * reboundForce, ForceMode2D.Impulse);
+			if (isConnnectedToEntity && leader)
+			{
+				if (!leader.isPlayerControlling)
+					return;
+				else
+					rigidbody2d.AddForce(new Vector2(-1, 1) * reboundForce, ForceMode2D.Impulse);
+			}
 		}
 	}
 }
