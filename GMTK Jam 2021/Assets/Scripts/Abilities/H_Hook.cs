@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Ability for the letter H: The grappling hook.
 /// </summary>
-public class H_GrapplingHook : Cube
+public class H_Hook : Cube
 {
     [Tooltip("Which layer(s) of objects the grappling hook attach to")]
     [SerializeField] private LayerMask grappableLayerMask;
@@ -146,7 +146,6 @@ public class H_GrapplingHook : Cube
 	protected override void OnCollisionEnter2D(Collision2D collision)
 	{
         base.OnCollisionEnter2D(collision);
-        Debug.Log("Collided");
 		if (currentState == State.Grappled && collision.gameObject.layer == 31)
             StopGrapple();
 	}
