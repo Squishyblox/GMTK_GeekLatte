@@ -136,7 +136,7 @@ public class Cube : MonoBehaviour
         yield return 0;
     }
 
-    private void Unstick()
+    public void Unstick()
     {
         foreach (var c in connectedCubes)//find the connected cube in order to detory the joint
         {
