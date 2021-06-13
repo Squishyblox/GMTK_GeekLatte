@@ -111,7 +111,7 @@ public class Cube : MonoBehaviour
 
     private void Stick(Collision2D collision)
     {
-        if (!canStick)
+        if (!canStick || !collision.gameObject.GetComponent<Cube>().canStick)
             return;
         //Debug.Log($"Stick to {collision.gameObject.name}!");
         // creates joint
