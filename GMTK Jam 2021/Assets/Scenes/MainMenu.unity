@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5368197413770301004, guid: a42212a41543c9449ab9ea32a19b13b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5910170362090089157, guid: a42212a41543c9449ab9ea32a19b13b7, type: 3}
       propertyPath: m_Name
       value: MainMenu Prefab
