@@ -22,7 +22,10 @@ public class R_Rebound : Cube
 				if (!leader.isPlayerControlling)
 					return;
 				else
-					rigidbody2d.AddForce(new Vector2(-1, 1) * reboundForce, ForceMode2D.Impulse);
+				{
+					rigidbody2d.velocity = new Vector2(-10f, 10f);
+					Debug.Log(rigidbody2d.velocity);
+				}
 			}
 		}
 	}
