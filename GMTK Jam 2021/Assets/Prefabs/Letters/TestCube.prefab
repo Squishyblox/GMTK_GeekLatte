@@ -94,8 +94,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickTime: 5
-  unstickTime: 1
+  unstickTime: 2.5
   connectedCubes: []
+  allConnectedCubes: []
+  isConnnectedToEntity: 0
+  isConnnectedToOff: 0
+  isConnnectedToGravity: 0
+  isConnnectedToTape: 0
+  leader: {fileID: 0}
+  IsGrounded: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isCollidingWithGround: 0
+  groundCollidePoint: {x: 0, y: 0}
 --- !u!1001 &3245286943313702616
 PrefabInstance:
   m_ObjectHideFlags: 0
