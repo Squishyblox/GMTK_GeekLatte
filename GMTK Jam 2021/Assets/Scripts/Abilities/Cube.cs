@@ -246,8 +246,10 @@ public class Cube : MonoBehaviour
         {
             if (c is T_Tape)
             {
-                if (isConnnectedToEntity/* && !isConnnectedToOff*/)
+                if (isConnnectedToEntity && leader)
                 {
+                    if (!leader.isPlayerControlling)
+                        return;
                     IsConnnectedToTape = true;
                     break;//break this foreach loop
                 }

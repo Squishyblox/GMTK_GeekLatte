@@ -80,6 +80,8 @@ public class H_Hook : Cube
 
         if (!isConnnectedToEntity)
             return;
+        else if (!leader.isPlayerControlling)
+            return;
 
         switch (currentState)
 		{
