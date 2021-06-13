@@ -49,7 +49,7 @@ public class Cube : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = -1;
     }
 
-    protected virtual void FixedUpdate() 
+    protected virtual void FixedUpdate()
     {
         CheckIfConnectedToOff();//always check first since off will turn off any other blocks
         CheckIfConnectedToEntity();
@@ -156,13 +156,10 @@ public class Cube : MonoBehaviour
         {
             if (c is E_Entity)
             {
-                //if (!c.isConnnectedToOff)
-                {
-                    //found entity
-                    leader = (E_Entity)c;
-                    isConnnectedToEntity = true;
-                    break;
-                }
+                //found entity
+                leader = (E_Entity)c;
+                isConnnectedToEntity = true;
+                break;
             }
         }
     }
@@ -246,8 +243,19 @@ public class Cube : MonoBehaviour
             allConnectedCubes.Add(c);//mark as checked
             foreach (var cNeighbor in c.connectedCubes)//Add all neighbors to the queue, except the checked one.
             {
-                if (!allConnectedCubes.Contains(c))//do not add the checked one.
+                bool alreadyHave = false;
+                foreach (var oldc in allConnectedCubes)
+                {
+                    if(oldc == cNeighbor.cube)
+                    {
+                        alreadyHave = true;
+                    }
+                }
+
+                if(!alreadyHave)
+                {
                     queueingCubes.Enqueue(cNeighbor.cube);
+                }
             }
         }
 
