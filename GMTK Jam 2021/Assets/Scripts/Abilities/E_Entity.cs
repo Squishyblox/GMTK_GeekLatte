@@ -6,7 +6,6 @@ public class E_Entity : Cube
 {
     [Header("Move")]
     [SerializeField] private float moveSpd = 10;
-    private float maxVelocity = 1000f;
     
     [Header("Jump")]
     [SerializeField] private float jumpForce = 50;
@@ -44,13 +43,28 @@ public class E_Entity : Cube
         {
             if (isPlayerControlling && isConnnectedToEntity)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && CanJump())
                 {
-                    GetComponent<Rigidbody2D>().velocity += Vector2.up * jumpForce * (1+ allConnectedCubes.Count);
+                    float force = GetComponent<Rigidbody2D>().gravityScale * jumpForce * (1+ allConnectedCubes.Count);
+                    GetComponent<Rigidbody2D>().velocity += new Vector2 (0, force);
                     yield return new WaitForSeconds(jumpCD);
                 }
             }
             yield return 0;
         }
+    }
+
+    protected bool CanJump()
+    {
+        if(IsGrounded)
+            return true;
+        
+        foreach (var c in allConnectedCubes)
+        {
+            if(c.IsGrounded)
+                return true;
+        }
+
+        return false;
     }
 }
