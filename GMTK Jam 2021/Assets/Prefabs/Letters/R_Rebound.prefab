@@ -105,10 +105,11 @@ MonoBehaviour:
   IsGrounded: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483712
   isCollidingWithGround: 0
   groundCollidePoint: {x: 0, y: 0}
-  reboundForce: 0
+  canStick: 1
+  reboundForce: 1
 --- !u!1 &9029570911558760325
 GameObject:
   m_ObjectHideFlags: 0

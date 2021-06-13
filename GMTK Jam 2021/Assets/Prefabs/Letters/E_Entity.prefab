@@ -186,10 +186,11 @@ MonoBehaviour:
   IsGrounded: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   isCollidingWithGround: 0
   groundCollidePoint: {x: 0, y: 0}
-  moveSpd: 10
-  jumpForce: 7
+  canStick: 1
+  moveSpd: 12
+  jumpForce: 12
   jumpCD: 1
   isPlayerControlling: 0

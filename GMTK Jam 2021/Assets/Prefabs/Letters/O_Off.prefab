@@ -186,6 +186,7 @@ MonoBehaviour:
   IsGrounded: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483712
   isCollidingWithGround: 0
   groundCollidePoint: {x: 0, y: 0}
+  canStick: 1
