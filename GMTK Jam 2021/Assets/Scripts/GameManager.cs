@@ -7,11 +7,46 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public List<E_Entity> entities;
+    public E_Entity currentEntity;
+
     private void Awake() 
     {
         if(instance == null)
         {
             instance = this;
+        }
+
+        entities = new List<E_Entity>();//empty for entity to add themselves
+    }
+
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+            SwitchEntity();
+    }
+
+    private void Start() 
+    {
+        //set current entity
+        //let cam follow    
+    }
+
+    public void SwitchEntity()
+    {
+        foreach (var e in entities)
+        {
+            e.isPlayerControlling = false;
+        }
+        
+        foreach (var e in entities)
+        {
+            if(e != currentEntity)
+            {
+                currentEntity = e;
+                e.isPlayerControlling = true;
+                return;
+            }
         }
     }
 

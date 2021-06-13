@@ -192,4 +192,4 @@ MonoBehaviour:
   moveSpd: 10
   jumpForce: 7
   jumpCD: 1
-  isPlayerControlling: 1
+  isPlayerControlling: 0
