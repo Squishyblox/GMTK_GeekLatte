@@ -23,7 +23,19 @@ public class Cube : MonoBehaviour
 
     private bool canStick = true;
 
-    protected virtual void Start()
+    public float StickTime { 
+        get => stickTime;
+        set
+        {
+            stickTime = value;
+			foreach (Cube cube in allConnectedCubes)
+			{
+                cube.StickTime = value;
+            }
+        }
+    }
+
+	protected virtual void Start()
     {
         GameManager.instance.onCubeEvent += UpdateAllConnection;
         canStick = true;
@@ -61,10 +73,11 @@ public class Cube : MonoBehaviour
     {
         if (canStick && collision.gameObject.tag == "Cube")
         {
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            if (cubeAlreadyConnected(rb.gameObject))//if it's already stick, do not stick it again
+            if (cubeAlreadyConnected(collision.gameObject))//if it's already stick, do not stick it again
                 return;
+
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
             StartCoroutine(PartialStick(rb, collision));
         }
