@@ -512,6 +512,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3950085621340207679, guid: 6adf2c3cc4746cb46a1e076ecb0e0456, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2147483712
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483765004519586803, guid: 6adf2c3cc4746cb46a1e076ecb0e0456, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483765004519586803, guid: 6adf2c3cc4746cb46a1e076ecb0e0456, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483765004519586803, guid: 6adf2c3cc4746cb46a1e076ecb0e0456, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5676289189015468964, guid: 6adf2c3cc4746cb46a1e076ecb0e0456, type: 3}
       propertyPath: debugHookShot
       value: 
@@ -581,6 +597,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1566292977202302552, guid: 0f2cd3c909ba31d49b4930834123fc2f, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2147483712
+      objectReference: {fileID: 0}
     - target: {fileID: 4196942809019199880, guid: 0f2cd3c909ba31d49b4930834123fc2f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -639,9 +659,9 @@ GameObject:
   - component: {fileID: 1829007307}
   - component: {fileID: 1829007306}
   - component: {fileID: 1829007305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +769,7 @@ GameObject:
   - component: {fileID: 1911738981}
   m_Layer: 31
   m_Name: Ceiling
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,6 +871,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 968208806365074098, guid: 09f5f5f51220c2246adb17eaf4b97cc1, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2147483712
+      objectReference: {fileID: 0}
     - target: {fileID: 1070990496600783682, guid: 09f5f5f51220c2246adb17eaf4b97cc1, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -956,6 +980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2307439175505511908, guid: f8238cbdda2f8a741bb902154f3634c0, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2147483712
+      objectReference: {fileID: 0}
     - target: {fileID: 3183343254618009970, guid: f8238cbdda2f8a741bb902154f3634c0, type: 3}
       propertyPath: m_Name
       value: G_Gravity
@@ -976,6 +1004,10 @@ PrefabInstance:
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: jumpForce
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 2147483712
       objectReference: {fileID: 0}
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_RootOrder
