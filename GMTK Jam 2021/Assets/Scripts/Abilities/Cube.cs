@@ -156,7 +156,7 @@ public class Cube : MonoBehaviour
         {
             if (c is E_Entity)
             {
-                if (!c.isConnnectedToOff)
+                //if (!c.isConnnectedToOff)
                 {
                     //found entity
                     leader = (E_Entity)c;
