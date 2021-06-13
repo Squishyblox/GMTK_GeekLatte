@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraSwitching : MonoBehaviour
 {
-    public Transform originalEntity;
-    public Transform otherEntity;
+    //public Transform originalEntity;
+    //public Transform otherEntity;
     public Vector3 cameraOffset;
     public Vector3 cameraLookAtOffset;
     private Vector3 targetPosition;
@@ -16,17 +16,30 @@ public class CameraSwitching : MonoBehaviour
 
     private void Start() 
     {
+        /*
         if (originalEntity || otherEntity == null)
         {
             Debug.LogError("Camera target entities not set.");
         }
         lookAtOriginal = true;
+        */
     }
 
-    private void Update() 
+    private void Update()
     {
+        if(GameManager.instance.currentEntity == null)
+            return;
+        print("yes");
+
+        E_Entity e = GameManager.instance.currentEntity;
+        
+        targetPosition = e.transform.position + cameraLookAtOffset;
+        cameraTargetPosition = e.transform.position + cameraOffset;
+
         this.transform.LookAt(Vector3.LerpUnclamped(this.transform.position - cameraOffset + cameraLookAtOffset, targetPosition, speed * Time.deltaTime));
         this.transform.position = Vector3.LerpUnclamped(this.transform.position, cameraTargetPosition, speed * Time.deltaTime);
+        
+        /*
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             lookAtOriginal = !lookAtOriginal;
@@ -40,6 +53,6 @@ public class CameraSwitching : MonoBehaviour
         {
             targetPosition = otherEntity.position + cameraLookAtOffset;
             cameraTargetPosition = otherEntity.position + cameraOffset;
-        }
+        }*/
     }
 }
