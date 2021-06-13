@@ -57,7 +57,7 @@ public class Cube : MonoBehaviour
 
     protected virtual void ActivateAbility() { }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (canStick && collision.gameObject.tag == "Cube")
         {
@@ -72,7 +72,7 @@ public class Cube : MonoBehaviour
 
     private void Stick(Rigidbody2D rb, Collision2D collision)
     {
-        //Debug.Log("Stick!");
+        Debug.Log($"Stick to {collision.gameObject.name}!");
         // creates joint
         FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
         // sets joint position to point of contact
