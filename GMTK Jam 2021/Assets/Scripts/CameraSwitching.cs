@@ -29,7 +29,6 @@ public class CameraSwitching : MonoBehaviour
     {
         if(GameManager.instance.currentEntity == null)
             return;
-        print("yes");
 
         E_Entity e = GameManager.instance.currentEntity;
         
