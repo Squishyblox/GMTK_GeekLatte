@@ -32,7 +32,7 @@ public class Cube : MonoBehaviour
     public bool isCollidingWithGround = false;
     public Vector2 groundCollidePoint;
 
-    private bool canStick = true;
+    [SerializeField]private bool canStick = true;
     private Rigidbody2D connectedRb;
 
 	public bool IsConnnectedToTape
@@ -77,7 +77,7 @@ public class Cube : MonoBehaviour
     {
         Stick(collision);
         yield return new WaitForSeconds(stickTime);
-        canStick = false;
+        //canStick = false;
 
         if (!isConnnectedToTape)
         {
