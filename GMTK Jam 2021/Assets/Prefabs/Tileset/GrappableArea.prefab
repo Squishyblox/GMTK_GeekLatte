@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 5298766433500027746}
   - component: {fileID: 5298766433500027745}
   m_Layer: 31
-  m_Name: Ceiling
+  m_Name: GrappableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
