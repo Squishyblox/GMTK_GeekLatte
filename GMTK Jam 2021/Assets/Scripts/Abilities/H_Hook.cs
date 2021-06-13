@@ -78,20 +78,17 @@ public class H_Hook : Cube
 	{
         base.Update();
 
-        if (!leader)
+        if (!isConnnectedToEntity)
             return;
 
         switch (currentState)
 		{
 			case State.Normal:
                 if (Input.GetMouseButtonDown(0))
+				{
                     StartGrapple();
-                break;
-            case State.GrappleStart:
-                if (Input.GetMouseButtonUp(0))
                     currentState = State.IsGrappling;
-                else if (Input.GetMouseButtonDown(1))
-                    StopGrapple();
+                }
                 break;
 			default:
 				break;
