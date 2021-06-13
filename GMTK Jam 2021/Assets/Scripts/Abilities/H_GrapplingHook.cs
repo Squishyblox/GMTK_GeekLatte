@@ -3,15 +3,13 @@ using UnityEngine;
 /// <summary>
 /// Ability for the letter H: The grappling hook.
 /// </summary>
-public class H_GrapplingHook : MonoBehaviour
+public class H_GrapplingHook : Cube
 {
     [Tooltip("Which layer(s) of objects the grappling hook attach to")]
     [SerializeField] private LayerMask grappableLayerMask;
 
     [Tooltip("How quickly the grappling hook pulls the player towards it")]
-    [SerializeField] private float retractTime;
-
-    public Transform debugHookShot;
+    [SerializeField] private float retractTime = 1f;
 
     private LineRenderer lineRenderer;
     private Vector3 grapplePosition;
@@ -43,16 +41,18 @@ public class H_GrapplingHook : MonoBehaviour
     /// <summary>
     /// Initialize state.
     /// </summary>
-	private void Start()
+	protected override void Start()
 	{
+        base.Start();
         currentState = State.Normal;
     }
 
     /// <summary>
     /// Handles the retraction of the grappling hook.
     /// </summary>
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
         if (currentState == State.IsGrappling)
 		{
             currentState = State.Grappled;
@@ -74,8 +74,9 @@ public class H_GrapplingHook : MonoBehaviour
     /// <summary>
     /// Uses the statemachine to check player's input.
     /// </summary>
-    void Update()
+    protected override void Update()
 	{
+        base.Update();
 		switch (currentState)
 		{
 			case State.Normal:
@@ -96,11 +97,12 @@ public class H_GrapplingHook : MonoBehaviour
     /// </summary>
 	private void StartGrapple()
 	{
+        if (!isConnnectedToEntity)
+            return;
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, grappableLayerMask))
 		{
-            debugHookShot.position = hit.point;
             grapplePosition = hit.point;
 
             currentState = State.GrappleStart;
@@ -141,8 +143,9 @@ public class H_GrapplingHook : MonoBehaviour
     /// If collided with the ceiling, stop grappling.
     /// </summary>
     /// <param name="collision">The object collided with.</param>
-	private void OnCollisionEnter2D(Collision2D collision)
+	protected override void OnCollisionEnter2D(Collision2D collision)
 	{
+        base.OnCollisionEnter2D(collision);
         Debug.Log("Collided");
 		if (currentState == State.Grappled && collision.gameObject.layer == 31)
             StopGrapple();
