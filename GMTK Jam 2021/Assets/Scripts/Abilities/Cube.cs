@@ -43,8 +43,7 @@ public class Cube : MonoBehaviour
             isConnnectedToTape = value;
 			if (!isConnnectedToTape)
 			{
-				Unstick();
-				canStick = true;
+                StartCoroutine(UnstickWithTime());
 			}
 		}
 	}
@@ -129,12 +128,22 @@ public class Cube : MonoBehaviour
         GameManager.instance.CubeEvent();//call this whenever cube sticks or unsticks
     }
 
+    private IEnumerator UnstickWithTime()
+	{
+        Unstick();
+        yield return new WaitForSeconds(unstickTime);
+        canStick = true;
+        yield return 0;
+    }
+
     private void Unstick()
     {
         foreach (var c in connectedCubes)//find the connected cube in order to detory the joint
         {
             if (c.joint != null)
+			{
                 Destroy(c.joint);//destory joint
+            }
             connectedCubes.Remove(c);
             break;
         }
@@ -268,7 +277,7 @@ public class Cube : MonoBehaviour
                 {
                     if (!leader.isPlayerControlling)
                         return;
-                    IsConnnectedToTape = true;
+                    isConnnectedToTape = true;
                     break;//break this foreach loop
                 }
             }
