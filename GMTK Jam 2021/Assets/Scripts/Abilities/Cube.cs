@@ -72,7 +72,7 @@ public class Cube : MonoBehaviour
 
     private void Stick(Rigidbody2D rb, Collision2D collision)
     {
-        Debug.Log($"Stick to {collision.gameObject.name}!");
+        //Debug.Log($"Stick to {collision.gameObject.name}!");
         // creates joint
         FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
         // sets joint position to point of contact
