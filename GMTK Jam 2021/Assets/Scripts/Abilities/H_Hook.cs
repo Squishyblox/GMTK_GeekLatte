@@ -13,7 +13,7 @@ public class H_Hook : Cube
 
     private LineRenderer lineRenderer;
     private Vector3 grapplePosition;
-    private State currentState;
+    [SerializeField]private State currentState;
     private Rigidbody2D rb;
     private float currentLerpTime;
     private bool isLerping;
@@ -22,18 +22,18 @@ public class H_Hook : Cube
     /// Statemachine for the grappling hook.
     /// </summary>
     private enum State
-	{
+    {
         Normal,
         GrappleStart,
         IsGrappling,
         Grappled
-	}
+    }
 
     /// <summary>
     /// Get attached components from the game object.
     /// </summary>
     private void Awake()
-	{
+    {
         lineRenderer = GetComponent<LineRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -42,7 +42,7 @@ public class H_Hook : Cube
     /// Initialize state.
     /// </summary>
 	protected override void Start()
-	{
+    {
         base.Start();
         currentState = State.Normal;
     }
@@ -54,14 +54,14 @@ public class H_Hook : Cube
     {
         base.FixedUpdate();
         if (currentState == State.IsGrappling)
-		{
+        {
             currentState = State.Grappled;
             currentLerpTime = 0f;
             isLerping = true;
-		}
+        }
 
         if (isLerping)
-		{
+        {
             currentLerpTime += Time.deltaTime;
             if (currentLerpTime > retractTime)
                 StopGrapple();
@@ -75,7 +75,7 @@ public class H_Hook : Cube
     /// Uses the statemachine to check player's input.
     /// </summary>
     protected override void Update()
-	{
+    {
         base.Update();
 
         if (!isConnnectedToEntity)
@@ -84,39 +84,48 @@ public class H_Hook : Cube
             return;
 
         switch (currentState)
-		{
-			case State.Normal:
+        {
+            case State.Normal:
                 if (Input.GetMouseButtonDown(0))
-				{
+                {
                     StartGrapple();
-                    currentState = State.IsGrappling;
                 }
                 break;
-			default:
-				break;
-		}
+            default:
+                break;
+        }
     }
 
     /// <summary>
     /// Cast a ray to detect a grappling point for to pull the player.
     /// </summary>
 	private void StartGrapple()
-	{
+    {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, grappableLayerMask))
-		{
-            grapplePosition = hit.point;
-
-            currentState = State.GrappleStart;
+        {
+            Collider2D hitCol = Physics2D.OverlapCircle(hit.point, 0.1f, groundLayer);
+            if (hitCol)
+            {
+                //print(hitCol);
+                grapplePosition = hit.point;
+                currentState = State.IsGrappling;
+            }
         }
+        /*
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 worldPoint2d = new Vector2(worldPoint.x, worldPoint.y);
+        grapplePosition = worldPoint2d;
+        print(worldPoint2d);
+        currentState = State.GrappleStart;*/
     }
 
     /// <summary>
     /// Resets states and variables.
     /// </summary>
     private void StopGrapple()
-	{
+    {
         currentLerpTime = retractTime;
         isLerping = false;
         lineRenderer.enabled = false;
@@ -124,7 +133,7 @@ public class H_Hook : Cube
     }
 
     private void LateUpdate()
-	{
+    {
         DrawRope();
     }
 
@@ -132,24 +141,24 @@ public class H_Hook : Cube
     /// Feed position data to the line renderer while grappling.
     /// </summary>
 	private void DrawRope()
-	{
+    {
         if (currentState != State.Normal)
-		{
+        {
             if (!lineRenderer.enabled)
                 lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, grapplePosition);
         }
-	}
+    }
 
     /// <summary>
     /// If collided with the ceiling, stop grappling.
     /// </summary>
     /// <param name="collision">The object collided with.</param>
 	protected override void OnCollisionEnter2D(Collision2D collision)
-	{
+    {
         base.OnCollisionEnter2D(collision);
-		if (currentState == State.Grappled && collision.gameObject.layer == 31)
+        if (currentState == State.Grappled && collision.gameObject.layer == 31)
             StopGrapple();
-	}
+    }
 }

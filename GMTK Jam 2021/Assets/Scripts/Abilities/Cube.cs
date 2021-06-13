@@ -28,7 +28,7 @@ public class Cube : MonoBehaviour
     [Header("GroundCheck")]
     //a bool for entity to check if can jump
     public bool IsGrounded = false;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] protected LayerMask groundLayer;
     public bool isCollidingWithGround = false;
     public Vector2 groundCollidePoint;
 
@@ -113,18 +113,19 @@ public class Cube : MonoBehaviour
     {
         if (!canStick || !collision.gameObject.GetComponent<Cube>().canStick)
             return;
+        
         //Debug.Log($"Stick to {collision.gameObject.name}!");
         // creates joint
         FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
         // sets joint position to point of contact
-        joint.anchor = collision.contacts[0].point;
+        //joint.anchor = collision.GetContact(0).point;
         // conects the joint to the other object
         joint.connectedBody = collision.transform.GetComponent<Rigidbody2D>();
         // Stops objects from continuing to collide and creating more joints
         joint.enableCollision = false;
 
         connectedCubes.Add(new CubeAndJoint(connectedRb.GetComponent<Cube>(), joint));
-
+        
         GameManager.instance.CubeEvent();//call this whenever cube sticks or unsticks
     }
 

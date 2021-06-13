@@ -49,7 +49,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5814708}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -60,7 +60,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1492617, y: 1.144997}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &6140584777451682130
 Rigidbody2D:
@@ -205,13 +205,15 @@ MonoBehaviour:
   IsGrounded: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483712
   isCollidingWithGround: 0
   groundCollidePoint: {x: 0, y: 0}
+  canStick: 1
   grappableLayerMask:
     serializedVersion: 2
-    m_Bits: 2147483648
+    m_Bits: 128
   retractTime: 1
+  currentState: 0
 --- !u!1 &6585981145329308009
 GameObject:
   m_ObjectHideFlags: 0
