@@ -5681,7 +5681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -6621,6 +6621,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 56.17, y: -36.24, z: 46.263}
+--- !u!114 &765508600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+  m_PrefabInstance: {fileID: 951103756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8dfca1fcc44d2d4a8bd732133f24758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767551317
 GameObject:
   m_ObjectHideFlags: 0
@@ -8421,7 +8432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -11058,6 +11069,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4112479406140016529, guid: a0b74b52a39853540a61fcffb334f9ee, type: 3}
+      propertyPath: startEntity
+      value: 
+      objectReference: {fileID: 765508600}
     - target: {fileID: 4112479406140016530, guid: a0b74b52a39853540a61fcffb334f9ee, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -11705,7 +11720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2637071764151639213, guid: 04a8421f743414443993d7b51a4f43a6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2637071764151639213, guid: 04a8421f743414443993d7b51a4f43a6, type: 3}
       propertyPath: otherEntity
@@ -13094,9 +13109,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a25222e827f9552418c4a26baef965fd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b8cc0d797156b68408db5e774fef78fa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14016,6 +14031,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4666653110631704343, guid: fe0a08d2ddbba3d48bd82bde142f6330, type: 3}
+      propertyPath: reboundForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666653110631704343, guid: fe0a08d2ddbba3d48bd82bde142f6330, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 1073741824
+      objectReference: {fileID: 0}
     - target: {fileID: 5271358313973042456, guid: fe0a08d2ddbba3d48bd82bde142f6330, type: 3}
       propertyPath: m_Name
       value: R_Rebound
