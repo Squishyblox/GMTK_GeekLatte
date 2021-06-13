@@ -1133,11 +1133,7 @@ MonoBehaviour:
   grappableLayerMask:
     serializedVersion: 2
     m_Bits: 2147483648
-  tip: {fileID: 294098836}
-  amera: {fileID: 0}
-  retractSpeed: 0
-  maxDistance: 100
-  lerpTime: 1
+  retractTime: 1
   debugHookShot: {fileID: 1759891477}
 --- !u!114 &1566292977387444752
 MonoBehaviour:
