@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    [Header("Stick")]
     [SerializeField] private float stickTime = 5f;
     [SerializeField] private float unstickTime = 2f;
 
+    [Header("ConnectedCubes")]
     public List<CubeAndJoint> connectedCubes = new List<CubeAndJoint>();//only neighbor
     public List<Cube> allConnectedCubes = new List<Cube>();
     //a list to cache all connected cubes(neighbor cubes), 
@@ -16,16 +18,39 @@ public class Cube : MonoBehaviour
     [SerializeField] protected bool isConnnectedToOff = false;
     //a flag that set to true when connected with O.
     [SerializeField] protected bool isConnnectedToGravity = false;
+    //a flag that set to true when connected with T.
+    [SerializeField] protected bool isConnnectedToTape = false;
     //a flag that set to true when connected with G. If it's connected to G but G is disable this will be false
     [SerializeField] protected E_Entity leader;
     //cache the leader to easily check if the leader is selected by the player or not.
     //check if leader.isPlayerControlling == true;
 
-    private bool canStick = true;
+    [Header("GroundCheck")]
+    //a bool for entity to check if can jump
+    public bool IsGrounded = false;
+    [SerializeField] private LayerMask groundLayer;
+    public bool isCollidingWithGround = false;
+    public Vector2 groundCollidePoint;
 
-    protected virtual void Start()
+    private bool canStick = true;
+    private Rigidbody2D connectedRb;
+
+	public bool IsConnnectedToTape
+	{
+        get { return isConnnectedToTape; }
+        set
+		{
+            isConnnectedToTape = value;
+			if (!isConnnectedToTape)
+			{
+                StartCoroutine(UnstickWithTime());
+			}
+		}
+	}
+
+	protected virtual void Start()
     {
-        GameManager.instance.onCubeEvent += UpdateAllConnection;
+        //GameManager.instance.onCubeEvent += UpdateAllConnection;
         canStick = true;
     }
 
@@ -39,39 +64,55 @@ public class Cube : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        UpdateAllConnection();
         CheckIfConnectedToOff();//always check first since off will turn off any other blocks
         CheckIfConnectedToEntity();
         CheckIfConnectedToGravity();
+        CheckIfConnectedToTape();
+
+        UpdateIsGrounded();
     }
 
     protected virtual IEnumerator PartialStick(Rigidbody2D rb, Collision2D collision)
     {
-        Stick(rb, collision);
+        Stick(collision);
         yield return new WaitForSeconds(stickTime);
-        Unstick(rb, collision);
         canStick = false;
-        yield return new WaitForSeconds(unstickTime);
-        canStick = true;
-        yield return 0;
+
+        if (!isConnnectedToTape)
+        {
+            Unstick();
+            yield return new WaitForSeconds(unstickTime);
+            canStick = true;
+            yield return 0;
+        }
     }
 
     protected virtual void ActivateAbility() { }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canStick && collision.gameObject.tag == "Cube")
+        if (collision.gameObject.tag == "Cube")
         {
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-
-            if (cubeAlreadyConnected(rb.gameObject))//if it's already stick, do not stick it again
+            if (cubeAlreadyConnected(collision.gameObject))//if it's already stick, do not stick it again
                 return;
 
-            StartCoroutine(PartialStick(rb, collision));
+            connectedRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            StartCoroutine(PartialStick(connectedRb, collision));
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = true;
+            groundCollidePoint = collision.GetContact(0).point;
         }
     }
 
-    private void Stick(Rigidbody2D rb, Collision2D collision)
+    private void Stick(Collision2D collision)
     {
+        if (!canStick)
+            return;
         //Debug.Log($"Stick to {collision.gameObject.name}!");
         // creates joint
         FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
@@ -82,24 +123,29 @@ public class Cube : MonoBehaviour
         // Stops objects from continuing to collide and creating more joints
         joint.enableCollision = false;
 
-        connectedCubes.Add(new CubeAndJoint(rb.GetComponent<Cube>(), joint));
+        connectedCubes.Add(new CubeAndJoint(connectedRb.GetComponent<Cube>(), joint));
 
         GameManager.instance.CubeEvent();//call this whenever cube sticks or unsticks
     }
 
-    private void Unstick(Rigidbody2D rb, Collision2D collision)
+    private IEnumerator UnstickWithTime()
+	{
+        Unstick();
+        yield return new WaitForSeconds(unstickTime);
+        canStick = true;
+        yield return 0;
+    }
+
+    private void Unstick()
     {
-        //Debug.Log("Unstick");
-        //CubeAndJoint cubeAndJoint = new CubeAndJoint();
         foreach (var c in connectedCubes)//find the connected cube in order to detory the joint
         {
-            if (c.cube == rb.GetComponent<Cube>())
-            {
-                if (c.joint != null)
-                    Destroy(c.joint);//destory joint
-                connectedCubes.Remove(c);
-                break;
+            if (c.joint != null)
+			{
+                Destroy(c.joint);//destory joint
             }
+            connectedCubes.Remove(c);
+            break;
         }
 
         GameManager.instance.CubeEvent();//call this whenever cube sticks or unsticks
@@ -153,10 +199,9 @@ public class Cube : MonoBehaviour
 
     private void CheckIfConnectedToGravity()//check if it's connected to G in any way
     {
-
         if (this is G_Gravity)//self is entity
         {
-            if (isConnnectedToEntity && !isConnnectedToOff)
+            if (isConnnectedToEntity/* && !isConnnectedToOff*/)
             {
                 isConnnectedToGravity = true;
                 return;
@@ -174,7 +219,7 @@ public class Cube : MonoBehaviour
         {
             if (c is G_Gravity)
             {
-                if (isConnnectedToEntity && !isConnnectedToOff)
+                if (isConnnectedToEntity/* && !isConnnectedToOff*/)
                 {
                     isConnnectedToGravity = true;
                     break;//break this foreach loop
@@ -187,8 +232,11 @@ public class Cube : MonoBehaviour
     {
         if (this is O_Off)//self is entity
         {
-            isConnnectedToOff = true;
-            return;
+            if (isConnnectedToEntity/* && !isConnnectedToOff*/)
+            {
+                isConnnectedToOff = true;
+                return;
+            }
         }
 
         if (connectedCubes.Count == 0)//of course not connected to anything
@@ -198,12 +246,40 @@ public class Cube : MonoBehaviour
         }
 
         isConnnectedToOff = false;//function below will set to true if there's gravity connected.
-        foreach (var c in connectedCubes)
+        foreach (var c in allConnectedCubes)
         {
-            if (c.cube is O_Off)
+            if (c is O_Off)
             {
-                isConnnectedToOff = true;
-                break;//break this foreach loop
+                if (isConnnectedToEntity/* && !isConnnectedToOff*/)
+                {
+                    isConnnectedToOff = true;
+                    break;//break this foreach loop
+                }
+            }
+        }
+    }
+
+    private void CheckIfConnectedToTape()//check if it's connected to T in any way
+    {
+        if (connectedCubes.Count == 0 || isConnnectedToOff)//of course not connected to anything
+        {
+            if (IsConnnectedToTape)
+                IsConnnectedToTape = false;
+            return;
+        }
+
+        isConnnectedToTape = false;//function below will set to true if there's tape connected.
+        foreach (var c in allConnectedCubes)
+        {
+            if (c is T_Tape)
+            {
+                if (isConnnectedToEntity && leader)
+                {
+                    if (!leader.isPlayerControlling)
+                        return;
+                    isConnnectedToTape = true;
+                    break;//break this foreach loop
+                }
             }
         }
     }
@@ -211,7 +287,7 @@ public class Cube : MonoBehaviour
     public void UpdateAllConnection()
     {
         allConnectedCubes = new List<Cube>();
-        
+
         if (connectedCubes.Count == 0)//of course not connected to anything
         {
             return;
@@ -233,13 +309,13 @@ public class Cube : MonoBehaviour
                 bool alreadyHave = false;
                 foreach (var oldc in allConnectedCubes)
                 {
-                    if(oldc == cNeighbor.cube)
+                    if (oldc == cNeighbor.cube)
                     {
                         alreadyHave = true;
                     }
                 }
 
-                if(!alreadyHave)
+                if (!alreadyHave)
                 {
                     queueingCubes.Enqueue(cNeighbor.cube);
                 }
@@ -251,6 +327,58 @@ public class Cube : MonoBehaviour
         //CheckIfConnectedToGravity();
     }
 
+    protected virtual void OnCollisionStay2D(Collision2D collision)
+    {
+        if (canStick && collision.gameObject.tag == "Cube")
+        {
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            if (cubeAlreadyConnected(rb.gameObject))//if it's already stick, do not stick it again
+                return;
+
+            StartCoroutine(PartialStick(rb, collision));
+        }
+        
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = true;
+            groundCollidePoint = collision.GetContact(0).point;
+        }
+    }
+
+    protected virtual void OnCollisionExit2D(Collision2D collision) 
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = false;
+        }
+    }
+
+    private void UpdateIsGrounded()
+    {
+        if(!isCollidingWithGround)
+        {
+            IsGrounded = false;
+            return;
+        }
+        
+        float raycastDistance = 0.5f;
+        Vector2 castDirection = new Vector2(0, GetComponent<Rigidbody2D>().gravityScale * -1f);
+        RaycastHit2D raycastHit = Physics2D.Raycast(groundCollidePoint, castDirection, raycastDistance, groundLayer);
+        Color rayColor;
+        if (raycastHit.collider != null)
+        {
+            rayColor = Color.green;
+            IsGrounded = true;
+        }
+        else
+        {
+            rayColor = Color.red;
+            IsGrounded = false;
+        }
+
+        Debug.DrawRay(groundCollidePoint, castDirection * raycastDistance, rayColor);
+    }
 }
 
 [System.Serializable]
