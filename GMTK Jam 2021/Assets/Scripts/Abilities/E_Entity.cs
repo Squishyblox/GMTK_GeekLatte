@@ -11,13 +11,15 @@ public class E_Entity : Cube
     [SerializeField] private float jumpForce = 50;
     [SerializeField] private float jumpCD = 0.5f;
 
-    public bool isPlayerControlling = true;// a flag to check if it's selected by player
+    public bool isPlayerControlling = false;// a flag to check if it's selected by player
 
     protected override void Start()
     {
         base.Start();
         isConnnectedToEntity = true;//default true on entity
         StartCoroutine(PlayerJump());
+
+        GameManager.instance.entities.Add(this);
     }
 
     protected override void FixedUpdate()
