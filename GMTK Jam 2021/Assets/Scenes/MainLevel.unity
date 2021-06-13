@@ -582,11 +582,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (11)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -765,11 +769,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (30)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -982,9 +990,9 @@ GameObject:
   m_Component:
   - component: {fileID: 98561971}
   - component: {fileID: 98561972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1197,28 +1205,13 @@ GameObject:
   - component: {fileID: 121053471}
   - component: {fileID: 121053470}
   - component: {fileID: 121053469}
-  - component: {fileID: 121053468}
   m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &121053468
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121053467}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &121053469
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1591,11 +1584,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (23)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -1701,7 +1698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194278403}
   - component: {fileID: 194278404}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1757,7 +1754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (34)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -1866,11 +1863,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (28)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -2120,9 +2121,9 @@ GameObject:
   m_Component:
   - component: {fileID: 228127176}
   - component: {fileID: 228127177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2177,9 +2178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 231582054}
   - component: {fileID: 231582055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2234,7 +2235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258821297}
   - component: {fileID: 258821298}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,75 +2282,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &261813699
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1789428916}
-    m_Modifications:
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8580693065238156198, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-      propertyPath: m_Name
-      value: rectangle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
 --- !u!1001 &262545110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2507,11 +2439,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (27)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -2657,9 +2593,9 @@ GameObject:
   m_Component:
   - component: {fileID: 290592506}
   - component: {fileID: 290592507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2713,7 +2649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (17)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -2880,9 +2816,9 @@ GameObject:
   m_Component:
   - component: {fileID: 328955070}
   - component: {fileID: 328955071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2936,11 +2872,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (40)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -3045,11 +2985,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (29)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -3159,11 +3103,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (41)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -3601,6 +3549,8 @@ Transform:
   - {fileID: 582210442}
   - {fileID: 538730169}
   - {fileID: 432559955}
+  - {fileID: 882765612}
+  - {fileID: 1836267129}
   m_Father: {fileID: 1789428916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3765,7 +3715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (33)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -4168,9 +4118,9 @@ GameObject:
   m_Component:
   - component: {fileID: 528353278}
   - component: {fileID: 528353279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4224,11 +4174,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (38)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -4769,7 +4723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601763764}
   - component: {fileID: 601763765}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4902,7 +4856,7 @@ GameObject:
   - component: {fileID: 608512192}
   m_Layer: 6
   m_Name: Floors (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4956,7 +4910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (43)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -5065,11 +5019,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (42)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -5175,9 +5133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 621388915}
   - component: {fileID: 621388916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5231,11 +5189,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -5441,6 +5403,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: moveSpd
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: isPlayerControlling
       value: 0
       objectReference: {fileID: 0}
@@ -5450,11 +5424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.42
+      value: 27.15
       objectReference: {fileID: 0}
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.79
+      value: 6.15
       objectReference: {fileID: 0}
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5487,6 +5461,10 @@ PrefabInstance:
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849910250687163087, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4358760846046160955, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_Name
@@ -5646,6 +5624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: half_rectangle (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2998326144174944071, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3802154512953593194, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -5719,9 +5701,9 @@ GameObject:
   m_Component:
   - component: {fileID: 683361673}
   - component: {fileID: 683361674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6378,7 +6360,7 @@ GameObject:
   - component: {fileID: 767551319}
   m_Layer: 6
   m_Name: Floors (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6391,8 +6373,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767551317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.34, y: -13.06, z: 0}
-  m_LocalScale: {x: 88.033875, y: 2.3297336, z: 1}
+  m_LocalPosition: {x: -5.34, y: -12.86, z: 0}
+  m_LocalScale: {x: 88.033875, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 636041963}
   m_RootOrder: 2
@@ -6432,7 +6414,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (32)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -6542,7 +6524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780672325}
   - component: {fileID: 780672326}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7009,6 +6991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: half_rectangle (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2998326144174944071, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3802154512953593194, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -7082,9 +7068,9 @@ GameObject:
   m_Component:
   - component: {fileID: 863276175}
   - component: {fileID: 863276176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7291,11 +7277,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (35)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -7391,6 +7381,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000002}
   m_EdgeRadius: 0
+--- !u!4 &882765612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+  m_PrefabInstance: {fileID: 2117526617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &897332684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7771,11 +7766,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (12)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -7880,11 +7879,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (5)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -7987,6 +7990,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: moveSpd
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 350902835245028498, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1433205566757204135, guid: 4b489e11245149d498b30dcf6318b65c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8200,7 +8215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978195113}
   - component: {fileID: 978195114}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8766,11 +8781,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (14)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -8876,7 +8895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133573309}
   - component: {fileID: 1133573310}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9064,7 +9083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165342768}
   - component: {fileID: 1165342769}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9408,11 +9427,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (24)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -9517,11 +9540,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (15)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -9763,9 +9790,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1221496646}
   - component: {fileID: 1221496647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9819,11 +9846,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (9)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -9929,7 +9960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232236005}
   - component: {fileID: 1232236006}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10060,9 +10091,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1270530407}
   - component: {fileID: 1270530408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10476,7 +10507,7 @@ GameObject:
   - component: {fileID: 1310683167}
   m_Layer: 6
   m_Name: Floors (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10531,7 +10562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352768946}
   - component: {fileID: 1352768947}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10587,7 +10618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (21)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -10919,9 +10950,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1383863888}
   - component: {fileID: 1383863889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11061,11 +11092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2637071764151639212, guid: 04a8421f743414443993d7b51a4f43a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -33.6
       objectReference: {fileID: 0}
     - target: {fileID: 2637071764151639212, guid: 04a8421f743414443993d7b51a4f43a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 2637071764151639212, guid: 04a8421f743414443993d7b51a4f43a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11135,7 +11166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1411279236}
   - component: {fileID: 1411279237}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11261,9 +11292,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1433483963}
   - component: {fileID: 1433483964}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11393,6 +11424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: half_rectangle (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2998326144174944071, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3802154512953593194, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -11466,9 +11501,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1482800120}
   - component: {fileID: 1482800121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11895,7 +11930,7 @@ GameObject:
   - component: {fileID: 1555870205}
   m_Layer: 6
   m_Name: Floors (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12024,7 +12059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1559745766}
   - component: {fileID: 1559745767}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12081,6 +12116,10 @@ PrefabInstance:
     - target: {fileID: 2998326144174944071, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
       propertyPath: m_Name
       value: half_rectangle (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998326144174944071, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3802154512953593194, guid: dd2e029dc05fcf74c87380a9204165fc, type: 3}
       propertyPath: m_RootOrder
@@ -12233,9 +12272,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1581170059}
   - component: {fileID: 1581170060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12351,11 +12390,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (26)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -12451,11 +12494,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000002}
   m_EdgeRadius: 0
---- !u!4 &1637933461 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
-  m_PrefabInstance: {fileID: 261813699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1651327544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12835,11 +12873,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (25)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -12945,9 +12987,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1686305347}
   - component: {fileID: 1686305348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13076,7 +13118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699382970}
   - component: {fileID: 1699382971}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: WallCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13275,7 +13317,7 @@ GameObject:
   - component: {fileID: 1757537038}
   m_Layer: 6
   m_Name: Floors (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13407,8 +13449,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767780997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.89, y: -3.79, z: 0}
-  m_LocalScale: {x: 6.06191, y: 7.31928, z: 1}
+  m_LocalPosition: {x: 21.22, y: -2.23, z: 0}
+  m_LocalScale: {x: 3.030955, y: 14.823006, z: 1}
   m_Children: []
   m_Father: {fileID: 636041963}
   m_RootOrder: 5
@@ -13448,11 +13490,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (20)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -13733,7 +13779,6 @@ Transform:
   - {fileID: 121053471}
   - {fileID: 1287036346}
   - {fileID: 496314755}
-  - {fileID: 1637933461}
   - {fileID: 114430637}
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -13804,7 +13849,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (31)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -13983,11 +14028,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (2)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -14083,6 +14132,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000002}
   m_EdgeRadius: 0
+--- !u!4 &1836267129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+  m_PrefabInstance: {fileID: 2017703098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1840671090
 GameObject:
   m_ObjectHideFlags: 0
@@ -14093,9 +14147,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1840671091}
   - component: {fileID: 1840671092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorCollider (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14149,11 +14203,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (22)
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -14862,7 +14920,7 @@ GameObject:
   - component: {fileID: 1946802481}
   m_Layer: 6
   m_Name: Floors (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15046,11 +15104,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (39)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_RootOrder
@@ -15203,6 +15265,75 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9999999}
   m_EdgeRadius: 0
+--- !u!1001 &2017703098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 430581901}
+    m_Modifications:
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_RootOrder
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580693065238156198, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_Name
+      value: rectangle (25)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
 --- !u!1001 &2035213748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15404,7 +15535,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Name
-      value: Cube (13)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2244842231740279210, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
       propertyPath: m_Layer
@@ -15516,7 +15647,7 @@ GameObject:
   - component: {fileID: 2075109779}
   m_Layer: 6
   m_Name: Floors (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15635,6 +15766,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2832821884665390912, guid: 824ee6a18fd9ad74a8cd503516702539, type: 3}
   m_PrefabInstance: {fileID: 2091738438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2117526617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 430581901}
+    m_Modifications:
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_RootOrder
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 952978927252888836, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580693065238156198, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
+      propertyPath: m_Name
+      value: rectangle (24)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f83901ff21fe1b4dbb93bd829399d56, type: 3}
 --- !u!1001 &428060575729327880
 PrefabInstance:
   m_ObjectHideFlags: 0
