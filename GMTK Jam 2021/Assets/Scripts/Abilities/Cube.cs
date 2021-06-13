@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    [Header("Stick")]
     [SerializeField] private float stickTime = 5f;
     [SerializeField] private float unstickTime = 2f;
 
+    [Header("ConnectedCubes")]
     public List<CubeAndJoint> connectedCubes = new List<CubeAndJoint>();//only neighbor
     public List<Cube> allConnectedCubes = new List<Cube>();
     //a list to cache all connected cubes(neighbor cubes), 
@@ -21,11 +23,18 @@ public class Cube : MonoBehaviour
     //cache the leader to easily check if the leader is selected by the player or not.
     //check if leader.isPlayerControlling == true;
 
+    [Header("GroundCheck")]
+    //a bool for entity to check if can jump
+    public bool IsGrounded = false;
+    [SerializeField] private LayerMask groundLayer;
+    public bool isCollidingWithGround = false;
+    public Vector2 groundCollidePoint;
+
     private bool canStick = true;
 
     protected virtual void Start()
     {
-        GameManager.instance.onCubeEvent += UpdateAllConnection;
+        //GameManager.instance.onCubeEvent += UpdateAllConnection;
         canStick = true;
     }
 
@@ -39,9 +48,12 @@ public class Cube : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        UpdateAllConnection();
         CheckIfConnectedToOff();//always check first since off will turn off any other blocks
         CheckIfConnectedToEntity();
         CheckIfConnectedToGravity();
+
+        UpdateIsGrounded();
     }
 
     protected virtual IEnumerator PartialStick(Rigidbody2D rb, Collision2D collision)
@@ -67,6 +79,12 @@ public class Cube : MonoBehaviour
                 return;
 
             StartCoroutine(PartialStick(rb, collision));
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = true;
+            groundCollidePoint = collision.GetContact(0).point;
         }
     }
 
@@ -211,7 +229,7 @@ public class Cube : MonoBehaviour
     public void UpdateAllConnection()
     {
         allConnectedCubes = new List<Cube>();
-        
+
         if (connectedCubes.Count == 0)//of course not connected to anything
         {
             return;
@@ -233,13 +251,13 @@ public class Cube : MonoBehaviour
                 bool alreadyHave = false;
                 foreach (var oldc in allConnectedCubes)
                 {
-                    if(oldc == cNeighbor.cube)
+                    if (oldc == cNeighbor.cube)
                     {
                         alreadyHave = true;
                     }
                 }
 
-                if(!alreadyHave)
+                if (!alreadyHave)
                 {
                     queueingCubes.Enqueue(cNeighbor.cube);
                 }
@@ -251,6 +269,58 @@ public class Cube : MonoBehaviour
         //CheckIfConnectedToGravity();
     }
 
+    protected virtual void OnCollisionStay2D(Collision2D collision)
+    {
+        if (canStick && collision.gameObject.tag == "Cube")
+        {
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            if (cubeAlreadyConnected(rb.gameObject))//if it's already stick, do not stick it again
+                return;
+
+            StartCoroutine(PartialStick(rb, collision));
+        }
+        
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = true;
+            groundCollidePoint = collision.GetContact(0).point;
+        }
+    }
+
+    protected virtual void OnCollisionExit2D(Collision2D collision) 
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isCollidingWithGround = false;
+        }
+    }
+
+    private void UpdateIsGrounded()
+    {
+        if(!isCollidingWithGround)
+        {
+            IsGrounded = false;
+            return;
+        }
+        
+        float raycastDistance = 0.5f;
+        Vector2 castDirection = new Vector2(0, GetComponent<Rigidbody2D>().gravityScale * -1f);
+        RaycastHit2D raycastHit = Physics2D.Raycast(groundCollidePoint, castDirection, raycastDistance, groundLayer);
+        Color rayColor;
+        if (raycastHit.collider != null)
+        {
+            rayColor = Color.green;
+            IsGrounded = true;
+        }
+        else
+        {
+            rayColor = Color.red;
+            IsGrounded = false;
+        }
+
+        Debug.DrawRay(groundCollidePoint, castDirection * raycastDistance, rayColor);
+    }
 }
 
 [System.Serializable]
